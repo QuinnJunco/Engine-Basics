@@ -1,5 +1,3 @@
-This was my very first go at creating a graphics engine from scratch. 
-In terms of graphics it's pretty bleak but it helped me to learn a fair bit.
-A lot of what I tried did not work and a lot of what I did was following 
-tutorials but I am glad to say I learned a lot and there is at least some reusable
-aspects. My next goal is to overcome the hello triangle using only openGL and SDL/GLFW.
+This was my very first go at creating a graphics engine from scratch. In terms of graphics it's pretty bleak but it helped me to learn a fair bit. A lot of what I tried did not work 
+and a lot of what I did was following tutorials but I am glad to say I learned a lot and there is at least some reusable aspects. 
+My next goal is to overcome the hello triangle using only openGL and SDL/GLFW.
