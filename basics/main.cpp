@@ -22,7 +22,6 @@ int main()
 {
     int status {0};
 
-
     if (Engine& E = Engine::get_instance(); E.get_window() == nullptr) { // initializes SDL 
         status = 1;
     } else if (!E.load_media()) { // loads media
@@ -36,7 +35,6 @@ int main()
         Texture* dTexture = static_cast<Texture*>(asset_table->find("./assets/down_arrow.png"));
         Texture* lTexture = static_cast<Texture*>(asset_table->find("./assets/left_arrow.png"));
         Texture* rTexture = static_cast<Texture*>(asset_table->find("./assets/right_arrow.png"));
-
         SDL_Event event;
         SDL_zero(event);
 

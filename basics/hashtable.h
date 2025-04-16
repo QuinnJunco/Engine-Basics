@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <stdint.h>
 
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
