@@ -6,14 +6,14 @@ const char* vertex_shader_source = "#version 420 core\n"
 "layout (location = 0) in vec3 aPos;\n"
 "void main()\n"
 "{\n"
-" gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+" gl_Position = vec4(aPos, 1.0);\n"
 "}\0";
 
 const char* fragment_shader_source = "#version 420 core\n"
-"out vec4 FragColor;\n"
+"uniform vec4 vertCol;\n"
 "void main()\n"
 "{\n"
-" FragColor = vec4(.8f, .9f, .1f, 1.0f);\n"
+" gl_FragColor = vertCol;\n"
 "}\0";
 
 /**
@@ -150,9 +150,18 @@ int main(){
 				process_input(window); // process input
 
 				/* RENDERING */
-				glClearColor(.2f, .4f, .8f, 1.0f);
+
+				float time = glfwGetTime(); // gets the system time
+				float green = (sin(time) / 2.0f) + .5f; // computes the green value based on the system time
+
+				glClearColor((sin(time)*.5f)+.3f, (sin(time)/3.0f), 1-cos(time)*.73f, 1.0f);
 				glClear(GL_COLOR_BUFFER_BIT);
+
+				int vertex_color_location = glGetUniformLocation(shader_program, "vertCol"); // stores the uniform
+
 				glUseProgram(shader_program);
+				glUniform4f(vertex_color_location, cos(time), green, 1.0f-(sin(time)), 1.0f); // updates the uniform
+
 				glBindVertexArray(VAO);
 				glDrawArrays(GL_TRIANGLES, 0, 3);
 

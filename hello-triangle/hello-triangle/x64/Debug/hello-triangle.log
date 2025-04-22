@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\Users\qjj61\workspace\engine-basics\hello-triangle\hello-triangle\main.cpp(154,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   hello-triangle.vcxproj -> C:\Users\qjj61\workspace\engine-basics\hello-triangle\x64\Debug\hello-triangle.exe
